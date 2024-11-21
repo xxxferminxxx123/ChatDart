@@ -1,5 +1,5 @@
 import 'package:crudmodalfersus/Persona/theme/app_theme.dart';
-import 'package:crudmodalfersus/Presentation/Chat/chat_screen.dart';
+import 'package:crudmodalfersus/Presentation/screens/Chat/chat_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
