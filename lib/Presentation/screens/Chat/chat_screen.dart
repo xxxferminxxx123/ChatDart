@@ -18,11 +18,11 @@ class ChatScreen extends StatelessWidget {
           padding: EdgeInsets.all(4.0),
           child: CircleAvatar(
             backgroundImage: NetworkImage(
-              'https://larepublica.cronosmedia.glr.pe/migration/images/YYNAG7W2YBEXFCGWIBL6W6QZEY.jpg',
+              'https://scontent.ftru1-1.fna.fbcdn.net/v/t1.18169-9/15317829_10158131750840001_6928324387150989640_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=7b2446&_nc_eui2=AeHOU6I8Bc8e9CEBlFaL156p6VGZXU_BfMXpUZldT8F8xWbkn-zRe82KsCxsCdZNdHWHAL3_-m5j3KOqq4q5a2Ow&_nc_ohc=q2MOsXeOoxkQ7kNvgHlEq4j&_nc_zt=23&_nc_ht=scontent.ftru1-1.fna&oh=00_AYD_K5STJzP-1N-jvhOxzrOsFi50En28fz8sZyXROMY89w&oe=676CA8D2',
             ),
           ),
         ),
-        title: const Text('Dayanita Locro TV'),
+        title: const Text('Paul Corcuera Jose Maria Profe'),
         centerTitle: false,
       ),
       // Cuerpo principal con fondo
@@ -58,11 +58,12 @@ class _ChatView extends StatelessWidget {
         child: Column(
           children: [
             Expanded(child: ListView.builder(
+              controller: chatProvider.chatScrollController,
               itemCount: chatProvider.message.length,
               itemBuilder: (context,index){
                   final message= chatProvider.message[index];
                   return (message.fromWho==FromWho.hers)
-                  ?  HerMessageBubble()
+                  ?  HerMessageBubble(message:message)
                   :  MyMessageBubble( message:message);
                 }
             ),

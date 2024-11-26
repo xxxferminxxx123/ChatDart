@@ -1,7 +1,15 @@
+import 'package:crudmodalfersus/Presentation/domain/dto/MessageDto.dart';
 import 'package:flutter/material.dart';
 
 
 class HerMessageBubble extends StatelessWidget {
+
+  final Message message;
+
+  const HerMessageBubble({
+    super.key
+    ,required this.message
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -12,11 +20,11 @@ class HerMessageBubble extends StatelessWidget {
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(20),),
-            child: const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+            child:  Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
               child: Text(
-                'segundo texto',
-                style:TextStyle(color: Colors.black)
+                message.text,
+                style: const TextStyle(color: Colors.black)
               ),
             )
         ),
